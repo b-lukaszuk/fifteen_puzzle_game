@@ -29,7 +29,6 @@ class Field {
     public getColId(): number {
         return this._colId;
     }
-
 }
 
 export default Field;
