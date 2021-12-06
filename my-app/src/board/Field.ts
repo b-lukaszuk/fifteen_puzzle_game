@@ -19,9 +19,12 @@ class Field {
     }
 
     public toString(): string {
-        return this.getVal().toString();
+        if (this.getVal() === 16) { // 16 is empty field
+            return "";
+        } else {
+            return this.getVal().toString();
+        }
     }
-
 }
 
 export default Field;
