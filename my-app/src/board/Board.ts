@@ -1,5 +1,5 @@
-import Field from "./Field";
-import { reshape } from "../utils/arr2d";
+import Field from './Field';
+import { reshape } from '../utils/arr2d';
 
 class Board {
 
