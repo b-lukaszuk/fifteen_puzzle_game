@@ -1,0 +1,17 @@
+td {
+  float: left;
+  width: 2.5em;
+  height: 2.5em;
+  background-color: lightgray;
+  font-size: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.1em solid white;
+  box-sizing: border-box;
+  padding: 0.2em;
+  box-shadow: 0.05em 0.05em gray;
+  border-radius: 0.3em;
+  margin: 0.1em;
+  background-image: linear-gradient(to bottom right, darkgray, lightgray, gainsboro);
+}
