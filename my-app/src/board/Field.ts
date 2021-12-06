@@ -3,15 +3,11 @@ class Field {
     static nextId: number = 0;
     private _id: number = 0;
     private _val: number = 0;
-    private _rowId: number = 0;
-    private _colId: number = 0;
 
-    public constructor(val: number, rowId: number, colId: number) {
+    public constructor(val: number) {
         this._id = Field.nextId;
         Field.nextId += 1;
         this._val = val;
-        this._rowId = rowId;
-        this._colId = colId;
     }
 
     public getId(): number {
@@ -22,13 +18,10 @@ class Field {
         return this._val;
     }
 
-    public getRowId(): number {
-        return this._rowId;
+    public toString(): string {
+        return this.getVal().toString();
     }
 
-    public getColId(): number {
-        return this._colId;
-    }
 }
 
 export default Field;
