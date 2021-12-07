@@ -3,20 +3,19 @@ import React from 'react';
 import Field from '../board/Field';
 import GameItem from './GameItem';
 
-function getTableCell(cell: Field) {
-    return (
-        <GameItem key={cell.getId()} field={cell} />
-    )
-}
-
 interface Props {
     arrFields: Field[];
+    fieldOnClick: Function;
 }
 const GameRow: React.FC<Props> = (props) => {
     const arrFieldsIn: Field[] = props.arrFields;
+    const fieldOnClickIn: Function = props.fieldOnClick;
     return (
         <tr>
-            {arrFieldsIn.map((aField) => { return getTableCell(aField) })}
+            {arrFieldsIn.map((aField) => {
+                return <GameItem key={aField.getId()} field={aField}
+                    onClick={fieldOnClickIn} />
+            })}
         </tr>
     )
 }

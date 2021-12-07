@@ -4,12 +4,14 @@ import Field from '../board/Field';
 
 interface Props {
     field: Field;
+    onClick: Function;
 }
 
 const GameItem: React.FC<Props> = (props) => {
     const fieldIn: Field = props.field;
+    const onClickIn: Function = props.onClick;
     return (
-        <td>
+        <td onClick={() => { onClickIn(fieldIn.getVal()) }}>
             {fieldIn.toString()}
         </td>
     )
