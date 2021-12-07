@@ -61,6 +61,14 @@ class Board {
         this._board[n1row][n1col].setVal(v2);
         this._board[n2row][n2col].setVal(v1);
     }
+
+    public makeMove(move: number): void {
+        if (this._isMoveLegal(move)) {
+            this._swapNumsOnBoard(move, 16); // 16 is empty
+        } else {
+            window.alert("illegal move");
+        }
+    }
 }
 
 export default Board;
