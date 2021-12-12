@@ -9,16 +9,19 @@ import './App.css';
 const App: React.FC = () => {
 
     const [gameBoard, setGameBoard] = useState(new Board());
-    const [gameStatus, setGameStatus] = useState("In progress");
+    const getGameStatus = (): string => {
+        if (gameBoard.isSolved()) {
+            return "Game Over";
+        } else {
+            return "In progress";
+        }
+    }
+    const [gameStatus, setGameStatus] = useState(getGameStatus());
 
     const moveNumber = (numToMove: number): void => {
         gameBoard.makeMove(numToMove);
         setGameBoard(new Board(gameBoard.getBoard()));
-        if (gameBoard.isSolved()) {
-            setGameStatus("Game Over");
-        } else {
-            setGameStatus("In progress");
-        }
+        setGameStatus(getGameStatus);
     }
 
     return (
