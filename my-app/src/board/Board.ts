@@ -5,8 +5,13 @@ class Board {
 
     private _board: Field[][] = [];
 
-    public constructor() {
-        this._board = reshape(this._get1dArrOfFields(1, 16), 4, 4);
+    public constructor(initBoard?: Field[][]) {
+        if (initBoard === undefined) {
+            this._board = reshape(this._get1dArrOfFields(1, 16), 4, 4);
+        }
+        else {
+            this._board = initBoard;
+        }
     }
 
     private _get1dArrOfFields(minIncl: number, maxIncl: number): Field[] {

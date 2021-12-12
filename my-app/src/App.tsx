@@ -11,12 +11,14 @@ const App: React.FC = () => {
 
     const moveNumber = (numToMove: number): void => {
         gameBoard.makeMove(numToMove);
+        setGameBoard(new Board(gameBoard.getBoard()));
     }
 
     return (
         <div className="App">
             <p>React App</p>
-            <GameBoard gameBoard={gameBoard} fieldOnClick={moveNumber} />
+            <GameBoard gameBoard={gameBoard.getBoard()}
+                fieldOnClick={moveNumber} />
         </div>
     );
 }
