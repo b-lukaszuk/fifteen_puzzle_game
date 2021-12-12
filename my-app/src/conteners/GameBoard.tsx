@@ -10,7 +10,8 @@ interface Props {
     fieldOnClick: Function;
 }
 
-// manual says to avoid map with index, but that is the best solution I found:
+// manual says to avoid map with index, but that is the best solution I found
+// for the 2d array:
 // https://www.pluralsight.com/guides/display-multidimensional-array-data-in-react
 const GameBoard: React.FC<Props> = (props) => {
     const gameBoardIn: Field[][] = props.gameBoard;
