@@ -7,9 +7,9 @@ class Board {
     private _solvedBoard: Field[][] = [];
 
     public constructor(initBoard?: Field[][]) {
-        this._solvedBoard = reshape(this._get1dArrOfFields(1, 16), 4, 4);
+        this._solvedBoard = reshape(this.get1dArrOfFields(1, 16), 4, 4);
         if (initBoard === undefined) {
-            this._board = reshape(this._get1dArrOfFields(1, 16), 4, 4);
+            this._board = reshape(this.get1dArrOfFields(1, 16), 4, 4);
         }
         else {
             this._board = initBoard;
@@ -22,7 +22,7 @@ class Board {
         }
     }
 
-    private _get1dArrOfFields(minIncl: number, maxIncl: number): Field[] {
+    public get1dArrOfFields(minIncl: number, maxIncl: number): Field[] {
         let result: Field[] = [];
         for (let i = minIncl; i <= maxIncl; i++) {
             result.push(new Field(i));
