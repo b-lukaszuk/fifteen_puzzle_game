@@ -9,9 +9,14 @@ const GameInfo: React.FC<Props> = (props) => {
     return (
         <div>
             <span>
-                <b>Fifteen Puzzle Game</b> &nbsp;
+                <b>Fifteen Puzzle Game:</b> &nbsp;
                 <a href="https://en.wikipedia.org/wiki/15_puzzle">
                     About the Game
+                </a>
+                <br />
+                <b>Hint: </b> &nbsp;
+                <a href="https://www.youtube.com/watch?v=EtXE08bOVZM">
+                    How to solve a 15 slide puzzle
                 </a>
             </span>
             <br />
