@@ -4,8 +4,10 @@ import { reshape } from '../utils/arr2d';
 class Board {
 
     private _board: Field[][] = [];
+    private _solvedBoard: Field[][] = [];
 
     public constructor(initBoard?: Field[][]) {
+        this._solvedBoard = reshape(this._get1dArrOfFields(1, 16), 4, 4);
         if (initBoard === undefined) {
             this._board = reshape(this._get1dArrOfFields(1, 16), 4, 4);
         }
@@ -79,6 +81,18 @@ class Board {
         } else {
             window.alert("illegal move");
         }
+    }
+
+    public isSolved(): boolean {
+        for (let r = 0; r < this._board.length; r++) {
+            for (let c = 0; c < this._board[r].length; c++) {
+                if (this._board[r][c].getVal() !==
+                    this._solvedBoard[r][c].getVal()) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }
 

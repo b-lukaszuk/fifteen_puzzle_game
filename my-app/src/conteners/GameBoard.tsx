@@ -18,7 +18,7 @@ const GameBoard: React.FC<Props> = (props) => {
     const fieldOnClickIn: Function = props.fieldOnClick;
     return (
         <div>
-            <table>
+            <table className="gameBoard">
                 <tbody>
                     {gameBoardIn.map((row, rowId) => {
                         return <GameRow key={rowId} arrFields={row}
