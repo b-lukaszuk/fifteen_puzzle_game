@@ -24,14 +24,15 @@ const App: React.FC = () => {
     const moveNumber = (numToMove: number): void => {
         gameBoard.makeMove(numToMove);
         setGameBoard(new Board(gameBoard.getBoard()));
-        setGameStatus(getGameStatus);
+        setGameStatus(getGameStatus());
     }
 
     const newGame = (): void => {
         let tmp: Field[] = [];
         tmp = gameBoard.get1dArrOfFields(1, 16);
-        tmp = scramble(tmp, 3);
+        tmp = scramble(tmp, 15);
         setGameBoard(new Board(reshape(tmp, 4, 4)));
+        setGameStatus(getGameStatus());
     }
 
     return (
