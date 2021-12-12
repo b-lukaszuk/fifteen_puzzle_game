@@ -15,3 +15,15 @@ td {
   margin: 0.1em;
   background-image: linear-gradient(to bottom right, darkgray, lightgray, gainsboro);
 }
+
+.empty {
+  background-color: darkgray;
+  border: none;
+  box-sizing: none;
+  box-shadow: none;
+  background-image: none;
+}
+
+table {
+    background-color: darkgray;
+}

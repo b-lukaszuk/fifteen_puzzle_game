@@ -11,7 +11,8 @@ const GameItem: React.FC<Props> = (props) => {
     const fieldIn: Field = props.field;
     const onClickIn: Function = props.onClick;
     return (
-        <td onClick={() => { onClickIn(fieldIn.getVal()) }}>
+        <td onClick={() => { onClickIn(fieldIn.getVal()) }}
+            className={[fieldIn.getVal() === 16 ? 'empty' : ''].join(" ")}>
             {fieldIn.toString()}
         </td>
     )
