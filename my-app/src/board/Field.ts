@@ -3,6 +3,7 @@ class Field {
     static nextId: number = 0;
     private _id: number = 0;
     private _val: number = 0;
+    private _isLegalMove: boolean = false;
 
     public constructor(val: number) {
         this._id = Field.nextId;
@@ -20,6 +21,14 @@ class Field {
 
     public setVal(newVal: number): void {
         this._val = newVal;
+    }
+
+    public setIsLegalMove(newVal: boolean): void {
+        this._isLegalMove = newVal;
+    }
+
+    public getIsLegalMove(): boolean {
+        return this._isLegalMove;
     }
 
     public toString(): string {

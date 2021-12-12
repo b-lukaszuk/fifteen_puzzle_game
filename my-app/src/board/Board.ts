@@ -12,6 +12,12 @@ class Board {
         else {
             this._board = initBoard;
         }
+        for (let r = 0; r < this._board.length; r++) {
+            for (let c = 0; c < this._board[r].length; c++) {
+                this._board[r][c].setIsLegalMove(this._isMoveLegal(
+                    this._board[r][c].getVal()));
+            }
+        }
     }
 
     private _get1dArrOfFields(minIncl: number, maxIncl: number): Field[] {
