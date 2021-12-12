@@ -16,7 +16,8 @@ const App: React.FC = () => {
 
     return (
         <div className="App">
-            <p>React App</p>
+            <h1>Fifteen Puzzle Game</h1>
+            <a href="https://en.wikipedia.org/wiki/15_puzzle">About the Game</a>
             <GameBoard gameBoard={gameBoard.getBoard()}
                 fieldOnClick={moveNumber} />
         </div>
