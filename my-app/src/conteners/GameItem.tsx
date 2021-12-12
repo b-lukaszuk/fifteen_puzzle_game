@@ -2,6 +2,8 @@ import React from 'react';
 
 import Field from '../board/Field';
 
+import './GameItem.css';
+
 interface Props {
     field: Field;
     onClick: Function;
