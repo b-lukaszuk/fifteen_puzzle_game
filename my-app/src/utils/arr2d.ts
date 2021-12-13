@@ -29,7 +29,6 @@ function reshape(arr1d: any[], nrows: number, ncols: number): any[][] {
     return result;
 }
 
-
 // from
 // https://www.geeksforgeeks.org/check-instance-15-puzzle-solvable/
 // modified by me
@@ -43,15 +42,16 @@ function flattenArr2d(arr2d: any[][]): any[] {
     return arr1d;
 }
 
+// in the example blank is equal to 0
+// in my program it is 16 (that's why I got break in for loop with i)
 function getInversionsCount(arr2d: number[][]): number {
     let invCount: number = 0;
     let nrows: number = arr2d.length;
-    let arr1d: number[][] = flattenArr2d(arr2d);
+    let arr1d: number[] = flattenArr2d(arr2d);
     for (let i = 0; i < nrows * nrows - 1; i++) {
+        if (arr1d[i] === 16) { continue; }
         for (let j = i + 1; j < nrows * nrows; j++) {
-            // count pairs(arr[i], arr[j]) such that
-            // i < j and arr[i] > arr[j]
-            if ((i < j) && (arr1d[i] > arr1d[j])) {
+            if (i < j && arr1d[i] > arr1d[j]) {
                 invCount += 1;
             }
         }
@@ -59,33 +59,24 @@ function getInversionsCount(arr2d: number[][]): number {
     return invCount;
 }
 
-function isNumInArr(numToFind: number, arr1d: number[]): boolean {
-    for (let i = 0; i < arr1d.length; i++) {
-        if (arr1d[i] === numToFind) {
-            return true;
-        }
-    }
-    return false;
-}
-
 // find Position of blank (16) from bottom
-function findBlankPosFromBottom(puzzle: number[][]): number {
-    let numOfRow: number = -1;
-    for (let r = 0; r < puzzle.length; r++) {
-        if (isNumInArr(16, puzzle[r])) {
-            numOfRow = r;
-            break;
+// number of moves it takes to move from original position (3, 3)
+// to the position it is now
+function findBlankPos(puzzle: number[][]): number {
+    let nRows: number = puzzle.length;
+    // start from bottom-right corner of matrix
+    for (let i = nRows - 1; i >= 0; i--) {
+        for (let j = nRows - 1; j >= 0; j--) {
+            if (puzzle[i][j] === 16) {
+                return nRows - i;
+            }
         }
     }
-    if (numOfRow === -1) {
-        throw new Error("Number 16 is not in the 2d array. It must be here");
-    } else {
-        return puzzle.length - numOfRow; // numbering strarts from bottom from 1
-    }
+    throw new Error("Number 16 is not in the 2d array. It must be here");
 }
 
 function isEven(someNum: number): boolean {
-    return someNum % 2 === 0;
+    return (someNum % 2) === 0;
 }
 
 function isOdd(someNum: number): boolean {
@@ -99,7 +90,7 @@ function isSolvable(puzzle: number[][]): boolean {
     if (isOdd(puzzle.length) && isEven(numberOfInversions)) {
         return true;
     } else { // grid is even
-        let posOfEmpty: number = findBlankPosFromBottom(puzzle);
+        let posOfEmpty: number = findBlankPos(puzzle);
         if (isEven(posOfEmpty) && isOdd(numberOfInversions)) {
             return true;
         }
