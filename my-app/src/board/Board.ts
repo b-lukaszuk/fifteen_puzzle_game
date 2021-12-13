@@ -1,19 +1,16 @@
 import Field from './Field';
-import { reshape } from '../utils/arr2d';
+import { reshape, pyRange } from '../utils/arr2d';
 
 class Board {
 
     private _board: Field[][] = [];
     private _solvedBoard: Field[][] = [];
 
-    public constructor(initBoard?: Field[][]) {
-        this._solvedBoard = reshape(this.get1dArrOfFields(1, 16), 4, 4);
-        if (initBoard === undefined) {
-            this._board = reshape(this.get1dArrOfFields(1, 16), 4, 4);
-        }
-        else {
-            this._board = initBoard;
-        }
+    public constructor(initBoard: number[][]) {
+        this._board = this._transformToArrOfFields(initBoard);
+        let tmp: number[][] = reshape(pyRange(1, 17, 1), 4, 4);
+        this._solvedBoard = this._transformToArrOfFields(tmp);
+
         for (let r = 0; r < this._board.length; r++) {
             for (let c = 0; c < this._board[r].length; c++) {
                 this._board[r][c].setIsLegalMove(this._isMoveLegal(
@@ -22,16 +19,32 @@ class Board {
         }
     }
 
-    public get1dArrOfFields(minIncl: number, maxIncl: number): Field[] {
-        let result: Field[] = [];
-        for (let i = minIncl; i <= maxIncl; i++) {
-            result.push(new Field(i));
+    private _transformToArrOfFields(arr2dNums: number[][]): Field[][] {
+        let result: Field[][] = [];
+        for (let r = 0; r < arr2dNums.length; r++) {
+            let newRow: Field[] = [];
+            for (let c = 0; c < arr2dNums[r].length; c++) {
+                newRow.push(new Field(arr2dNums[r][c]));
+            }
+            result.push(newRow);
         }
         return result;
     }
 
     public getBoard(): Field[][] {
         return this._board;
+    }
+
+    public get2dArrOfNums(): number[][] {
+        let result: number[][] = [];
+        for (let r = 0; r < this._board.length; r++) {
+            let rowOfNums: number[] = [];
+            for (let c = 0; c < this._board[r].length; c++) {
+                rowOfNums.push(this._board[r][c].getVal());
+            }
+            result.push(rowOfNums);
+        }
+        return result;
     }
 
     private _getLocOfNum(searchedNum: number): number[] {
