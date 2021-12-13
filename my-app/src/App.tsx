@@ -36,7 +36,6 @@ const App: React.FC = () => {
             arr1d = scramble(arr1d, 15);
             arr2d = reshape(arr1d, 4, 4);
             puzzleSolvable = isSolvable(arr2d);
-            console.log("is game solvable:", puzzleSolvable);
         } while (!puzzleSolvable)
         setGameBoard(new Board(arr2d));
         setGameStatus("In progress");
