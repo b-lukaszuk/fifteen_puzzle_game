@@ -17,7 +17,7 @@ const GameInfo: React.FC<Props> = (props) => {
                 </a>
                 <br />
                 <b>Hint: </b> &nbsp;
-                <a href="https://www.youtube.com/watch?v=EtXE08bOVZM">
+                <a href="https://www.youtube.com/results?search_query=how+to+solve+fifteen+puzzle">
                     How to solve a 15 slide puzzle
                 </a>
                 <br />
