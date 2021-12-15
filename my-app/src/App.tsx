@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Board from './board/Board';
 import Button from './components/Button';
@@ -21,6 +21,26 @@ const App: React.FC = () => {
     }
     const [gameStatus, setGameStatus] = useState(getGameStatus());
     const [moveCount, setMoveCount] = useState(0);
+    const [time, setTime] = useState(300);
+
+    const timeToTimer = (curTime: number): string => {
+        let min: number = Math.floor(curTime / 60);
+        let sec: number = curTime % 60;
+        let minStr: string = min.toString();
+        let secStr: string = sec.toString();
+        if (minStr.length === 1) { minStr = "0" + minStr };
+        if (secStr.length === 1) { secStr = "0" + secStr };
+        return minStr + ":" + secStr;
+    }
+
+    useEffect(() => {
+        if (time > 0) {
+            let intervalId = setInterval(() => {
+                setTime(time - 1);
+            }, 1000);
+            return () => { clearInterval(intervalId) };
+        }
+    }, [time])
 
     const moveNumber = (numToMove: number): void => {
         if (gameBoard.isMoveLegal(numToMove)) {
@@ -44,11 +64,13 @@ const App: React.FC = () => {
         setGameBoard(new Board(arr2d));
         setGameStatus("In progress");
         setMoveCount(0);
+        setTime(300);
     }
 
     return (
         <div className="App">
             <GameInfo gameStatus={gameStatus} moveCount={moveCount} />
+            <p>Timer: {timeToTimer(time)}</p>
             <Button className={"normalBut"}
                 btnText={"new game"} onClick={() => { newGame() }} />
             <GameBoard gameBoard={gameBoard.getBoard()}
