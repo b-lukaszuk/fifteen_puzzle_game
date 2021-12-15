@@ -20,11 +20,15 @@ const App: React.FC = () => {
         }
     }
     const [gameStatus, setGameStatus] = useState(getGameStatus());
+    const [moveCount, setMoveCount] = useState(0);
 
     const moveNumber = (numToMove: number): void => {
-        gameBoard.makeMove(numToMove);
-        setGameBoard(new Board(gameBoard.get2dArrOfNums()));
-        setGameStatus(getGameStatus());
+        if (gameBoard.isMoveLegal(numToMove)) {
+            gameBoard.makeMove(numToMove);
+            setGameBoard(new Board(gameBoard.get2dArrOfNums()));
+            setGameStatus(getGameStatus());
+            setMoveCount(moveCount + 1);
+        }
     }
 
     const newGame = (): void => {
@@ -39,11 +43,12 @@ const App: React.FC = () => {
         } while (!puzzleSolvable)
         setGameBoard(new Board(arr2d));
         setGameStatus("In progress");
+        setMoveCount(0);
     }
 
     return (
         <div className="App">
-            <GameInfo gameStatus={gameStatus} />
+            <GameInfo gameStatus={gameStatus} moveCount={moveCount} />
             <Button className={"normalBut"}
                 btnText={"new game"} onClick={() => { newGame() }} />
             <GameBoard gameBoard={gameBoard.getBoard()}

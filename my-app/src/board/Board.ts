@@ -13,7 +13,7 @@ class Board {
 
         for (let r = 0; r < this._board.length; r++) {
             for (let c = 0; c < this._board[r].length; c++) {
-                this._board[r][c].setIsLegalMove(this._isMoveLegal(
+                this._board[r][c].setIsLegalMove(this.isMoveLegal(
                     this._board[r][c].getVal()));
             }
         }
@@ -64,7 +64,7 @@ class Board {
         return this._getLocOfNum(16); // 16 is empty
     }
 
-    private _isMoveLegal(numToMove: number): boolean {
+    public isMoveLegal(numToMove: number): boolean {
         let [mvRow, mvCol] = this._getLocOfNum(numToMove);
         let [emptyRow, emptyCol] = this._getLocOfEmpty();
         if (mvRow === emptyRow) {
@@ -89,7 +89,7 @@ class Board {
     }
 
     public makeMove(move: number): void {
-        if (this._isMoveLegal(move)) {
+        if (this.isMoveLegal(move)) {
             this._swapNumsOnBoard(move, 16); // 16 is empty
         }
         // else {
