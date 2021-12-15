@@ -14,6 +14,7 @@
   border-radius: 0.3em;
   margin: 0.1em;
   background-image: linear-gradient(to bottom right, darkgray, lightgray, gainsboro);
+  cursor: not-allowed;
 }
 
 .empty {
@@ -32,6 +33,7 @@
   border-radius: 0.3em;
   margin: 0.1em;
   background-image: none;
+  cursor: not-allowed;
 }
 
 .legalMove {
