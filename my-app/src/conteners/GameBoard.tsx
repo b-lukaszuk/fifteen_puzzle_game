@@ -20,13 +20,14 @@ const GameBoard: React.FC<Props> = (props) => {
     const fieldOnClickIn: Function = props.fieldOnClick;
     const timeIn: string = props.time;
     const moveNoIn: number = props.moveNo;
+    let textColor: string = timeIn === "00:00" ? "red" : "white";
     return (
         <div>
             <table className="gameBoard">
                 <thead>
                     <tr>
-                        <th>Move: {moveNoIn}</th>
-                        <th>Time: {timeIn}</th>
+                        <th className={'white'}>Move: {moveNoIn}</th>
+                        <th className={textColor}>Time: {timeIn}</th>
                     </tr>
                 </thead>
                 <tbody>
