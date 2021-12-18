@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/fifteenPuzzleGame/static/css/main.a09b74e7.chunk.css",
-    "main.js": "/fifteenPuzzleGame/static/js/main.8d50f526.chunk.js",
-    "main.js.map": "/fifteenPuzzleGame/static/js/main.8d50f526.chunk.js.map",
-    "runtime-main.js": "/fifteenPuzzleGame/static/js/runtime-main.8ac82760.js",
-    "runtime-main.js.map": "/fifteenPuzzleGame/static/js/runtime-main.8ac82760.js.map",
-    "static/js/2.24453483.chunk.js": "/fifteenPuzzleGame/static/js/2.24453483.chunk.js",
-    "static/js/2.24453483.chunk.js.map": "/fifteenPuzzleGame/static/js/2.24453483.chunk.js.map",
-    "static/js/3.c5795eee.chunk.js": "/fifteenPuzzleGame/static/js/3.c5795eee.chunk.js",
-    "static/js/3.c5795eee.chunk.js.map": "/fifteenPuzzleGame/static/js/3.c5795eee.chunk.js.map",
-    "index.html": "/fifteenPuzzleGame/index.html",
-    "static/css/main.a09b74e7.chunk.css.map": "/fifteenPuzzleGame/static/css/main.a09b74e7.chunk.css.map",
-    "static/js/2.24453483.chunk.js.LICENSE.txt": "/fifteenPuzzleGame/static/js/2.24453483.chunk.js.LICENSE.txt"
+    "main.css": "/fifteen_puzzle_game/static/css/main.a09b74e7.chunk.css",
+    "main.js": "/fifteen_puzzle_game/static/js/main.8d50f526.chunk.js",
+    "main.js.map": "/fifteen_puzzle_game/static/js/main.8d50f526.chunk.js.map",
+    "runtime-main.js": "/fifteen_puzzle_game/static/js/runtime-main.979f2eb8.js",
+    "runtime-main.js.map": "/fifteen_puzzle_game/static/js/runtime-main.979f2eb8.js.map",
+    "static/js/2.24453483.chunk.js": "/fifteen_puzzle_game/static/js/2.24453483.chunk.js",
+    "static/js/2.24453483.chunk.js.map": "/fifteen_puzzle_game/static/js/2.24453483.chunk.js.map",
+    "static/js/3.c5795eee.chunk.js": "/fifteen_puzzle_game/static/js/3.c5795eee.chunk.js",
+    "static/js/3.c5795eee.chunk.js.map": "/fifteen_puzzle_game/static/js/3.c5795eee.chunk.js.map",
+    "index.html": "/fifteen_puzzle_game/index.html",
+    "static/css/main.a09b74e7.chunk.css.map": "/fifteen_puzzle_game/static/css/main.a09b74e7.chunk.css.map",
+    "static/js/2.24453483.chunk.js.LICENSE.txt": "/fifteen_puzzle_game/static/js/2.24453483.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.8ac82760.js",
+    "static/js/runtime-main.979f2eb8.js",
     "static/js/2.24453483.chunk.js",
     "static/css/main.a09b74e7.chunk.css",
     "static/js/main.8d50f526.chunk.js"
