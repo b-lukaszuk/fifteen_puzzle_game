@@ -10,7 +10,7 @@ import './App.css';
 
 const App: React.FC = () => {
 
-    const getSolvablePuzzle = (): number[][] => {
+    const getRandomSolvablePuzzle = (): number[][] => {
         let arr1d: number[] = [];
         let arr2d: number[][] = [];
         let puzzleSolvable: boolean = false;
@@ -24,7 +24,7 @@ const App: React.FC = () => {
     }
 
     const [gameBoard, setGameBoard] = useState(
-        new Board(getSolvablePuzzle()));
+        new Board(getRandomSolvablePuzzle()));
     const [gameOver, setGameOver] = useState(false);
     const [moveCount, setMoveCount] = useState(0);
     const [time, setTime] = useState(300);
@@ -58,7 +58,7 @@ const App: React.FC = () => {
     }
 
     const newGame = (): void => {
-        setGameBoard(new Board(getSolvablePuzzle()));
+        setGameBoard(new Board(getRandomSolvablePuzzle()));
         setGameOver(false);
         setMoveCount(0);
         setTime(300);
