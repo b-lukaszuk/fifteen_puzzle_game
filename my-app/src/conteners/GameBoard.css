@@ -6,13 +6,12 @@
 
 thead {
     background-color: dimgray;
-    align-content: left;
     display: inline-block;
     width: 100%;
 }
 
 th {
-    width: 68%;
+    width: 100%;
 }
 
 .white {
