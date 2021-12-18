@@ -12,14 +12,7 @@ const App: React.FC = () => {
 
     const [gameBoard, setGameBoard] = useState(
         new Board(reshape(pyRange(1, 17, 1), 4, 4)));
-    const getGameStatus = (): string => {
-        if (gameBoard.isSolved()) {
-            return "Game Over";
-        } else {
-            return "In progress";
-        }
-    }
-    const [gameStatus, setGameStatus] = useState(getGameStatus());
+    const [gameOver, setGameOver] = useState(false);
     const [moveCount, setMoveCount] = useState(0);
     const [time, setTime] = useState(300);
 
@@ -46,7 +39,7 @@ const App: React.FC = () => {
         if (gameBoard.isMoveLegal(numToMove)) {
             gameBoard.makeMove(numToMove);
             setGameBoard(new Board(gameBoard.get2dArrOfNums()));
-            setGameStatus(getGameStatus());
+            setGameOver(gameBoard.isSolved());
             setMoveCount(moveCount + 1);
         }
     }
@@ -62,14 +55,15 @@ const App: React.FC = () => {
             puzzleSolvable = isSolvable(arr2d);
         } while (!puzzleSolvable)
         setGameBoard(new Board(arr2d));
-        setGameStatus("In progress");
+        setGameOver(false);
         setMoveCount(0);
         setTime(300);
     }
 
     return (
         <div className="App">
-            <GameInfo gameStatus={gameStatus} moveCount={moveCount} />
+            <GameInfo gameStatus={gameOver ? "Game Over" : "In Progress"}
+                moveCount={moveCount} />
             <p>Timer: {timeToTimer(time)}</p>
             <Button className={"normalBut"}
                 btnText={"new game"} onClick={() => { newGame() }} />
