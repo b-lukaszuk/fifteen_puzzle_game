@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './GameInfo.css';
+
 interface Props {
     gameStatus: string;
 }
@@ -7,7 +9,7 @@ interface Props {
 const GameInfo: React.FC<Props> = (props) => {
     const gameStatusIn: string = props.gameStatus;
     return (
-        <div>
+        <div className="gameInfo">
             <span>
                 <b>Fifteen Puzzle Game:</b> &nbsp;
                 <a href="https://en.wikipedia.org/wiki/15_puzzle">
