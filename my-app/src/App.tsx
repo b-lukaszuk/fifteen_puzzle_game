@@ -10,8 +10,21 @@ import './App.css';
 
 const App: React.FC = () => {
 
+    const getSolvablePuzzle = (): number[][] => {
+        let arr1d: number[] = [];
+        let arr2d: number[][] = [];
+        let puzzleSolvable: boolean = false;
+        do {
+            arr1d = pyRange(1, 17, 1);
+            arr1d = scramble(arr1d, 15);
+            arr2d = reshape(arr1d, 4, 4);
+            puzzleSolvable = isSolvable(arr2d);
+        } while (!puzzleSolvable)
+        return arr2d;
+    }
+
     const [gameBoard, setGameBoard] = useState(
-        new Board(reshape(pyRange(1, 17, 1), 4, 4)));
+        new Board(getSolvablePuzzle()));
     const [gameOver, setGameOver] = useState(false);
     const [moveCount, setMoveCount] = useState(0);
     const [time, setTime] = useState(300);
@@ -45,16 +58,7 @@ const App: React.FC = () => {
     }
 
     const newGame = (): void => {
-        let arr1d: number[] = [];
-        let arr2d: number[][] = [];
-        let puzzleSolvable: boolean = false;
-        do {
-            arr1d = pyRange(1, 17, 1);
-            arr1d = scramble(arr1d, 15);
-            arr2d = reshape(arr1d, 4, 4);
-            puzzleSolvable = isSolvable(arr2d);
-        } while (!puzzleSolvable)
-        setGameBoard(new Board(arr2d));
+        setGameBoard(new Board(getSolvablePuzzle()));
         setGameOver(false);
         setMoveCount(0);
         setTime(300);
