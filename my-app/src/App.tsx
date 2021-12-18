@@ -67,6 +67,7 @@ const App: React.FC = () => {
     return (
         <div className="App">
             <GameInfo gameStatus={gameOver ? "Game Over" : "In Progress"} />
+            <br />
             <Button className={"normalBut"}
                 btnText={"new game"} onClick={() => { newGame() }} />
             <br />
