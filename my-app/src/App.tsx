@@ -46,10 +46,15 @@ const App: React.FC = () => {
             }, 1000);
             return () => { clearInterval(intervalId) };
         }
+        if (time <= 0) {
+            setGameOver(true);
+        }
     }, [time, gameOver])
 
     const moveNumber = (numToMove: number): void => {
-        if (gameBoard.isMoveLegal(numToMove)) {
+        if (gameOver) {
+            alert("Game is over. Click new game to start again.");
+        } else if (gameBoard.isMoveLegal(numToMove)) {
             gameBoard.makeMove(numToMove);
             setGameBoard(new Board(gameBoard.get2dArrOfNums()));
             setGameOver(gameBoard.isSolved());
