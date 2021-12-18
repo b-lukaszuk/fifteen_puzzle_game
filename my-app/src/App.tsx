@@ -27,13 +27,13 @@ const App: React.FC = () => {
     }
 
     useEffect(() => {
-        if (time > 0) {
+        if (time > 0 && (!gameOver)) {
             let intervalId = setInterval(() => {
                 setTime(time - 1);
             }, 1000);
             return () => { clearInterval(intervalId) };
         }
-    }, [time])
+    }, [time, gameOver])
 
     const moveNumber = (numToMove: number): void => {
         if (gameBoard.isMoveLegal(numToMove)) {
