@@ -62,12 +62,13 @@ const App: React.FC = () => {
 
     return (
         <div className="App">
-            <GameInfo gameStatus={gameOver ? "Game Over" : "In Progress"}
-                moveCount={moveCount} />
-            <p>Timer: {timeToTimer(time)}</p>
+            <GameInfo gameStatus={gameOver ? "Game Over" : "In Progress"} />
             <Button className={"normalBut"}
                 btnText={"new game"} onClick={() => { newGame() }} />
-            <GameBoard gameBoard={gameBoard.getBoard()}
+            <br />
+            <br />
+            <GameBoard time={timeToTimer(time)} moveNo={moveCount}
+                gameBoard={gameBoard.getBoard()}
                 fieldOnClick={moveNumber} />
         </div>
     );
