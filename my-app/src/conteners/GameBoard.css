@@ -4,6 +4,10 @@
     border-radius: 0.3em;
 }
 
+.solved {
+    border: 0.4em solid green;
+}
+
 thead {
     background-color: dimgray;
     display: inline-block;

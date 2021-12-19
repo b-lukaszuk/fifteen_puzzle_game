@@ -80,7 +80,8 @@ const App: React.FC = () => {
             <br />
             <GameBoard time={timeToTimer(time)} moveNo={moveCount}
                 gameBoard={gameBoard.getBoard()}
-                fieldOnClick={moveNumber} />
+                fieldOnClick={moveNumber}
+                isSolved={gameBoard.isSolved()} />
         </div>
     );
 }

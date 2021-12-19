@@ -10,6 +10,7 @@ interface Props {
     fieldOnClick: Function;
     time: string;
     moveNo: number;
+    isSolved: boolean;
 }
 
 // manual says to avoid map with index, but that is the best solution I found
@@ -20,10 +21,12 @@ const GameBoard: React.FC<Props> = (props) => {
     const fieldOnClickIn: Function = props.fieldOnClick;
     const timeIn: string = props.time;
     const moveNoIn: number = props.moveNo;
+    const isSolvedIn: boolean = props.isSolved;
     let textColor: string = timeIn === "00:00" ? "red" : "white";
     return (
         <div>
-            <table className="gameBoard">
+            <table className={['gameBoard',
+                isSolvedIn ? 'solved' : ''].join(" ")}>
                 <thead>
                     <tr>
                         <th className={'white'}>Move: {moveNoIn}</th>
