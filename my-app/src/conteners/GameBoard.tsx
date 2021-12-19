@@ -22,16 +22,15 @@ const GameBoard: React.FC<Props> = (props) => {
     const timeIn: string = props.time;
     const moveNoIn: number = props.moveNo;
     const isSolvedIn: boolean = props.isSolved;
-    let textColor: string = timeIn === "00:00" ? "red" : "white";
+    let customClasses: string = [isSolvedIn ? 'solved' : ' ',
+    timeIn === '00:00' ? 'noTime' : ''].join(" ");
     return (
         <div>
-            <table className={['gameBoard',
-                isSolvedIn ? 'solved' : '',
-                timeIn === '00:00' ? 'noTime' : ''].join(" ")}>
-                <thead>
+            <table className={'gameBoard ' + customClasses}>
+                <thead className={customClasses}>
                     <tr>
-                        <th className={'white'}>Move: {moveNoIn}</th>
-                        <th className={textColor}>Time: {timeIn}</th>
+                        <th className='white'>Move: {moveNoIn}</th>
+                        <th className='white'>Time: {timeIn}</th>
                     </tr>
                 </thead>
                 <tbody>

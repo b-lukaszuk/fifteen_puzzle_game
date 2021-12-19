@@ -5,11 +5,11 @@
 }
 
 .solved {
-    border: 0.4em solid green;
+    border: 0.2em solid green;
 }
 
 .noTime {
-    border: 0.4em solid red;
+    border: 0.2em solid red;
 }
 
 thead {
@@ -18,14 +18,24 @@ thead {
     width: 100%;
 }
 
+thead.solved {
+    background-color: green;
+    display: inline-block;
+    width: 100%;
+    border: none;
+}
+
+thead.noTime {
+    background-color: red;
+    display: inline-block;
+    width: 100%;
+    border: none;
+}
+
 th {
     width: 100%;
 }
 
 .white {
     color: white;
-}
-
-.red {
-    color: red;
 }
