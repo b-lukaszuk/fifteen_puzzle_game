@@ -26,7 +26,8 @@ const GameBoard: React.FC<Props> = (props) => {
     return (
         <div>
             <table className={['gameBoard',
-                isSolvedIn ? 'solved' : ''].join(" ")}>
+                isSolvedIn ? 'solved' : '',
+                timeIn === '00:00' ? 'noTime' : ''].join(" ")}>
                 <thead>
                     <tr>
                         <th className={'white'}>Move: {moveNoIn}</th>

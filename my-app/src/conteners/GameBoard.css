@@ -8,6 +8,10 @@
     border: 0.4em solid green;
 }
 
+.noTime {
+    border: 0.4em solid red;
+}
+
 thead {
     background-color: dimgray;
     display: inline-block;
