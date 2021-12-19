@@ -92,9 +92,6 @@ class Board {
         if (this.isMoveLegal(move)) {
             this._swapNumsOnBoard(move, 16); // 16 is empty
         }
-        // else {
-        //     window.alert("illegal move");
-        // }
     }
 
     public isSolved(): boolean {
