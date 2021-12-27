@@ -42,7 +42,7 @@ const App: React.FC = () => {
     useEffect(() => {
         if (time > 0 && (!gameOver)) {
             let intervalId = setInterval(() => {
-                setTime(time - 1);
+                setTime((prevTime) => { return prevTime - 1; });
             }, 1000);
             return () => { clearInterval(intervalId) };
         }
@@ -58,7 +58,7 @@ const App: React.FC = () => {
             gameBoard.makeMove(numToMove);
             setGameBoard(new Board(gameBoard.get2dArrOfNums()));
             setGameOver(gameBoard.isSolved());
-            setMoveCount(moveCount + 1);
+            setMoveCount((prevMoveCount) => { return prevMoveCount + 1; });
         }
     }
 
