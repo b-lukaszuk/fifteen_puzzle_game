@@ -43,7 +43,8 @@ function flattenArr2d(arr2d: any[][]): any[] {
 }
 
 // in the example blank is equal to 0
-// in my program it is 16 (that's why I got break in for loop with i)
+// in my program it is 16
+// (that's why I got the continue statement in the for loop with i)
 function getInversionsCount(arr2d: number[][]): number {
     let invCount: number = 0;
     let nrows: number = arr2d.length;
@@ -85,8 +86,7 @@ function isOdd(someNum: number): boolean {
 
 function isSolvable(puzzle: number[][]): boolean {
     let numberOfInversions: number = getInversionsCount(puzzle);
-    // If grid is odd, return true if inversion
-    // count is even.
+    // If grid is odd, return true if inversion count is even.
     if (isOdd(puzzle.length) && isEven(numberOfInversions)) {
         return true;
     } else { // grid is even
