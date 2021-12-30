@@ -51,7 +51,7 @@ const App: React.FC = () => {
         }
     }, [time, gameOver])
 
-    const moveNumber = (numToMove: number): void => {
+    const moveNumberOnPuzzle = (numToMove: number): void => {
         if (gameOver) {
             alert("Game is over. Click new game to start again.");
         } else if (gameBoard.isMoveLegal(numToMove)) {
@@ -80,7 +80,7 @@ const App: React.FC = () => {
             <br />
             <GameBoard time={timeToTimer(time)} moveNo={moveCount}
                 gameBoard={gameBoard.getBoard()}
-                fieldOnClick={moveNumber}
+                fieldOnClick={moveNumberOnPuzzle}
                 isSolved={gameBoard.isSolved()} />
         </div>
     );
