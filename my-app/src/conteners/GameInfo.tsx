@@ -23,6 +23,12 @@ const GameInfo: React.FC<Props> = (props) => {
             </span>
             <br />
             <span><b>Game status:</b> {gameStatusIn}</span>
+            <br />
+            <b>Instructions: </b>
+            <br />
+            <span>Click on a field near the empty field to shift it to that spot</span>
+            <br />
+            <span>Order all numbers from 1 to 15 (left to right, top to bottom)</span>
         </div >
     );
 }
