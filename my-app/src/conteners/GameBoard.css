@@ -2,6 +2,14 @@
     background-color: darkgray;
     border: 0.2em solid gray;
     border-radius: 0.3em;
+
+    /* prevent selecting text from a field */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .solved {
