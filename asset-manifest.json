@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/fifteen_puzzle_game/static/css/main.30d397c3.chunk.css",
-    "main.js": "/fifteen_puzzle_game/static/js/main.701983b0.chunk.js",
-    "main.js.map": "/fifteen_puzzle_game/static/js/main.701983b0.chunk.js.map",
+    "main.js": "/fifteen_puzzle_game/static/js/main.1807c3ef.chunk.js",
+    "main.js.map": "/fifteen_puzzle_game/static/js/main.1807c3ef.chunk.js.map",
     "runtime-main.js": "/fifteen_puzzle_game/static/js/runtime-main.979f2eb8.js",
     "runtime-main.js.map": "/fifteen_puzzle_game/static/js/runtime-main.979f2eb8.js.map",
     "static/js/2.24453483.chunk.js": "/fifteen_puzzle_game/static/js/2.24453483.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.979f2eb8.js",
     "static/js/2.24453483.chunk.js",
     "static/css/main.30d397c3.chunk.css",
-    "static/js/main.701983b0.chunk.js"
+    "static/js/main.1807c3ef.chunk.js"
   ]
 }
