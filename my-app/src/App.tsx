@@ -40,6 +40,10 @@ const App: React.FC = () => {
     }
 
     useEffect(() => {
+        document.title = "Fifteen puzzle game";
+    }, [])
+
+    useEffect(() => {
         if (time > 0 && (!gameOver)) {
             let intervalId = setInterval(() => {
                 setTime((prevTime) => { return prevTime - 1; });
