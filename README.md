@@ -25,9 +25,7 @@ cd my-app
 npm start
 ```
 
-## Additional info
-**Do użytku własnego, nie powinno być używane przez nikogo innego.**<br>
-**For personal use only, should not be used by anyone else.**
+## Warning
 
-
+**The content of this folder may be incorrect, erroneous and/or harmful. Use it at Your own risk.**
 
